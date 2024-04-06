@@ -1,4 +1,6 @@
 export default function Checkout(props) {
+  const taxTotal = (props.total * 0.08).toFixed(2);
+  const finalTotal = props.total + Number(taxTotal);
   return (
     <div>
       <h1>CHECKOUT:</h1>
@@ -78,7 +80,11 @@ export default function Checkout(props) {
             />
           </div>
         </div>
-        <h2>Subtotal: ${props.total}</h2>
+        <div>
+          <h2>Subtotal: ${props.total.toFixed(2)}</h2>
+          <h3>Tax: ${Number(taxTotal)}</h3>
+          <h4>Total: ${finalTotal.toFixed(2)}</h4>
+        </div>
         <button
           type="submit"
           className="btn btn-primary btn-md submit"

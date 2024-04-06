@@ -73,7 +73,7 @@ export default function Menu(props) {
     return (
       <div className="row">
         <div className="col-md-4">
-          <div className="card mb-3">
+          <div className="card mb-3" key={item.id}>
             <img src={item.image} className="card-img-top" alt={item.name} />
             <div className="card-body">
               <h5 className="card-title">{item.name}</h5>
