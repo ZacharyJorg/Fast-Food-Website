@@ -83,6 +83,8 @@ function App() {
 
   function checkedOut() {
     setCheckOut(false);
+    setCart(0);
+    setTotal(0);
   }
 
   return (

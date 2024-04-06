@@ -119,8 +119,17 @@ export default function Menu(props) {
             </div>
             <div className="modal-body container">{menuItemElements}</div>
             <div className="modal-footer">
-              <button type="button" className="btn btn-secondary">
-                {props.cart}
+              <button type="button" class="btn btn-secondary position-relative">
+                Cart
+                <span
+                  className={
+                    props.cart &&
+                    "position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                  }
+                >
+                  {props.cart > 0 && props.cart}
+                  <span className="visually-hidden"></span>
+                </span>
               </button>
               <button
                 type="button"
@@ -128,7 +137,7 @@ export default function Menu(props) {
                 data-bs-dismiss="modal"
                 onClick={props.placeOrder}
               >
-                {props.total}
+                {props.total.toFixed(2)}
               </button>
             </div>
           </div>
