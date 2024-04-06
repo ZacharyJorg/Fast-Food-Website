@@ -1,10 +1,11 @@
-export default function Checkout() {
+export default function Checkout(props) {
   return (
     <div>
+      <h1>CHECKOUT:</h1>
       <form action="#" className="container">
         <div className="row g-3">
           <label className="checkoutLabels" htmlFor="firstName lastName">
-            Name:
+            *Name:
           </label>
           <div className="col">
             <input
@@ -13,6 +14,7 @@ export default function Checkout() {
               placeholder="First name"
               aria-label="First name"
               id="firstName"
+              required
             />
           </div>
           <div className="col">
@@ -22,6 +24,7 @@ export default function Checkout() {
               placeholder="Last name"
               aria-label="Last name"
               id="lastName"
+              required
             />
           </div>
         </div>
@@ -36,6 +39,7 @@ export default function Checkout() {
               placeholder="Phone Number"
               aria-label="Phone Number"
               id="phone"
+              required
             />
           </div>
           <div className="col">
@@ -45,6 +49,7 @@ export default function Checkout() {
               placeholder="Email"
               aria-label="Email"
               id="email"
+              required
             />
           </div>
         </div>
@@ -59,6 +64,7 @@ export default function Checkout() {
               placeholder="Credit Card Number"
               aria-label="Credit Card Number"
               id="credit"
+              required
             />
           </div>
           <div className="col">
@@ -68,9 +74,18 @@ export default function Checkout() {
               placeholder="CVV"
               aria-label="CVV"
               id="cvv"
+              required
             />
           </div>
         </div>
+        <h2>Subtotal: ${props.total}</h2>
+        <button
+          type="submit"
+          className="btn btn-primary btn-md submit"
+          onClick={props.checkedOut}
+        >
+          Check out
+        </button>
       </form>
     </div>
   );
