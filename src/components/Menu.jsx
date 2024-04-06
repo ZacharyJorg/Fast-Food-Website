@@ -1,18 +1,15 @@
 import { useState } from "react";
 
-export default function Menu() {
+export default function Menu(props) {
   const [cart, setCart] = useState(0);
   const [total, setTotal] = useState(0);
 
-  function addToCart() {
-    setCart(cart + 1);
-  }
-
   function addTotal(id) {
-    const itemPrice = menuItems.price;
-    setTotal((prevTotal) =>
-      id === menuItems.id ? prevTotal + itemPrice : prevTotal
-    );
+    // Find the item with the matching id
+    const selectedItem = menuItems.find((item) => item.id === id);
+    // Add the price of the selected item to the total
+    setTotal((prevTotal) => prevTotal + selectedItem.price);
+    setCart(cart + 1);
   }
 
   const menuItems = [
@@ -84,7 +81,11 @@ export default function Menu() {
               <p className="card-text">
                 Ingredients: {item.ingredients.join(", ")}
               </p>
-              <a href="#" className="btn btn-primary" onClick={addToCart}>
+              <a
+                href="#"
+                className="btn btn-primary"
+                onClick={() => addTotal(item.id)}
+              >
                 {item.price}
               </a>
             </div>
@@ -119,15 +120,16 @@ export default function Menu() {
             </div>
             <div className="modal-body container">{menuItemElements}</div>
             <div className="modal-footer">
-              <button
-                type="button"
-                className="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
+              <button type="button" className="btn btn-secondary">
                 {cart}
               </button>
-              <button type="button" className="btn btn-primary">
-                Understood
+              <button
+                type="button"
+                className="btn btn-primary"
+                data-bs-dismiss="modal"
+                onClick={props.placeOrder}
+              >
+                {total}
               </button>
             </div>
           </div>
