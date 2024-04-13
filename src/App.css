@@ -4,17 +4,13 @@
   text-align: center;
 }
 
-.titleCard {
+.title {
   font-weight: 400;
-  padding-top: 25px;
+  padding-top: 50px;
   padding-bottom: 5px;
 }
 
-.section {
-  background-color: antiquewhite;
-}
-
-.navbar {
+.subtitle {
   background-color: antiquewhite;
 }
 
@@ -23,6 +19,10 @@
   padding: 15px;
   text-align: center;
   border: 1px solid black;
+}
+
+.bodyText {
+  padding: 50px;
 }
 .card {
   min-width: 3rem;
@@ -45,4 +45,7 @@
 
 img {
   height: 30rem;
+}
+
+.resturantLogo {
 }

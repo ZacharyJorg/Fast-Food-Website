@@ -31,7 +31,7 @@ function App() {
   }
 
   return (
-    <>
+    <div className="container">
       {checkOut ? (
         <Checkout checkedOut={checkedOut} total={total} />
       ) : (
@@ -46,7 +46,7 @@ function App() {
           />
         </div>
       )}
-    </>
+    </div>
   );
 }
 
