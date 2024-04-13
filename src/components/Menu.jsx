@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { menuItems } from "../App.jsx";
+import { menuItems } from "../MenuItems";
 
 export default function Menu(props) {
   //   const [cart, setCart] = useState(0);
@@ -119,7 +119,10 @@ export default function Menu(props) {
             </div>
             <div className="modal-body container">{menuItemElements}</div>
             <div className="modal-footer">
-              <button type="button" class="btn btn-secondary position-relative">
+              <button
+                type="button"
+                className="btn btn-secondary position-relative"
+              >
                 Cart
                 <span
                   className={
