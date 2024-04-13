@@ -1,8 +1,9 @@
 #root {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
   text-align: center;
 }
+
 .titleCard {
   font-weight: 400;
   padding-top: 25px;
@@ -24,7 +25,8 @@
   border: 1px solid black;
 }
 .card {
-  padding: 2em;
+  min-width: 3rem;
+  width: 100%;
 }
 
 .form-container {
@@ -39,4 +41,8 @@
 
 .submit {
   margin: 20px;
+}
+
+img {
+  height: 30rem;
 }
