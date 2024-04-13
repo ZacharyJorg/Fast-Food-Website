@@ -1,4 +1,5 @@
 import { menuItems } from "../MenuItems";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 export default function Menu(props) {
   const menuItemElements = menuItems.map((item) => {
@@ -52,7 +53,7 @@ export default function Menu(props) {
                 type="button"
                 className="btn btn-secondary position-relative"
               >
-                Cart
+                <i className="bi bi-basket"></i>
                 <span
                   className={
                     props.cart &&
@@ -69,7 +70,7 @@ export default function Menu(props) {
                 data-bs-dismiss="modal"
                 onClick={props.placeOrder}
               >
-                {props.total.toFixed(2)}
+                Checkout
               </button>
             </div>
           </div>
