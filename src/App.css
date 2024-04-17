@@ -6,12 +6,13 @@
 
 .title {
   font-weight: 400;
-  padding-top: 50px;
+  padding-top: 60px;
   padding-bottom: 5px;
 }
 
 .subtitle {
   background-color: antiquewhite;
+  padding: 15px;
 }
 
 .bodyTextContainer {
@@ -19,10 +20,11 @@
   padding: 15px;
   text-align: center;
   border: 1px solid black;
+  align-items: center;
 }
 
 .bodyText {
-  padding: 50px;
+  padding: 25px;
 }
 .card {
   min-width: 3rem;
@@ -47,5 +49,11 @@ img {
   height: 30rem;
 }
 
-.resturantLogo {
+.locations-container {
+  text-align: left;
+  border: 1px solid black;
+  justify-items: center;
+  padding: 25px;
+  padding-right: 35px;
+  display: inline-block;
 }

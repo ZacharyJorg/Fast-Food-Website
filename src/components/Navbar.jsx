@@ -1,6 +1,6 @@
 export default function Nav() {
   return (
-    <div className="container" style={{ backgroundColor: "antiquewhite" }}>
+    <div style={{ backgroundColor: "antiquewhite" }}>
       <div className="row row-cols-4">
         <div className="col-6 resturantLogo text-start">
           <h1>La Cantina</h1>

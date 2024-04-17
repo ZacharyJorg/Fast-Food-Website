@@ -56,12 +56,40 @@ export default function Body() {
       <legend className="title">DISCOVER</legend>
       <section className="subtitle">Our locations</section>
       <div className="bodyTextContainer">
-        <ul>
-          <li>Dallas, TX</li>
-          <li>San Diego, CA</li>
-          <li>Denver, CO</li>
-          <li>New York City, NY</li>
-        </ul>
+        <p className="bodyText">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum
+          dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+          occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+          mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+          ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+          fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+          sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <div className="container locations-container">
+          <ul className="locations-list">
+            <li>Seattle, WA</li>
+            <li>San Diego, CA</li>
+            <li>Los Angeles, CA</li>
+            <li>New York City, NY</li>
+            <li>Dallas, TX</li>
+            <li>Austin, TX</li>
+            <li>Portland, OR</li>
+            <li>Denver, CO</li>
+          </ul>
+        </div>
       </div>
     </div>
   );
