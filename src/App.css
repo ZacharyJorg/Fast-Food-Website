@@ -46,7 +46,7 @@
 }
 
 img {
-  height: 30rem;
+  height: 35rem;
 }
 
 .locations-container {
@@ -59,4 +59,9 @@ img {
 
 .dropdown-toggle {
   margin-right: 20px;
+}
+
+.locations-list {
+  list-style-position: inside;
+  padding-left: 0;
 }
