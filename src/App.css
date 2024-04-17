@@ -50,10 +50,13 @@ img {
 }
 
 .locations-container {
-  text-align: left;
   border: 1px solid black;
   justify-items: center;
   padding: 25px;
   padding-right: 35px;
   display: inline-block;
+}
+
+.dropdown-toggle {
+  margin-right: 20px;
 }
