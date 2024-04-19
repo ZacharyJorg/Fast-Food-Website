@@ -51,3 +51,10 @@ function App() {
 }
 
 export default App;
+
+//things to add
+//change the logo to an actual png
+//make the subtitles more appealing
+//make it so i can only checkout when the form is completed
+// change the drop down buttons
+//Add a google font

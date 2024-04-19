@@ -29,6 +29,7 @@
 .card {
   min-width: 3rem;
   width: 100%;
+  padding-top: 25px;
 }
 
 .form-container {
@@ -45,8 +46,18 @@
   margin: 20px;
 }
 
+.card-img-top {
+  border-radius: 25px;
+}
+
 img {
-  height: 35rem;
+  height: 30rem;
+  min-height: auto;
+  max-width: 35rem;
+  min-width: auto;
+  align-self: center;
+  border: 1px solid black;
+  border-radius: 25px 25px 25px 25px;
 }
 
 .locations-container {
