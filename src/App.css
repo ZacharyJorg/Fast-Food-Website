@@ -56,8 +56,9 @@ img {
   max-width: 35rem;
   min-width: auto;
   align-self: center;
-  border: 1px solid black;
-  border-radius: 25px 25px 25px 25px;
+  border: 0.3px solid grey;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.1),
+    0 15px 20px rgba(0, 0, 0, 0.05);
 }
 
 .locations-container {
