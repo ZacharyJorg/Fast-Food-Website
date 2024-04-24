@@ -4,20 +4,21 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 
 // you can map over state
 // set state to the menuItems array and create the elements from the state
-//set a conditional to render the buttons based off the quanittity property from the state
-//change menuItems.quantity to .quantityButtons for better readabillity
+// set a conditional to render the buttons based off the quanittity property from the state
+// change menuItems.quantity to .quantityButtons for better readabillity
+// cahnge the condition on which the quantity buttons render so they leave when amount == 1
+// increasing the quantity cannot be stopped by the qunatity state, it breaks things
 
 export default function Menu(props) {
   const [quantity, setQuantity] = useState(1);
   const [showMenu, setShowMenu] = useState(menuItems);
 
   function increaseQuantity(id) {
-    if (quantity === 99) {
-      return;
-    }
-    setQuantity(quantity + 1);
     setShowMenu(
       showMenu.map((item) => {
+        if (item.amount === 99) {
+          return item;
+        }
         return item.id === id
           ? { ...item, amount: parseFloat(item.amount + 1) }
           : item;
@@ -25,12 +26,11 @@ export default function Menu(props) {
     );
   }
   function decreaseQuantity(id) {
-    if (quantity === 1) {
-      return;
-    }
-    setQuantity(quantity - 1);
     setShowMenu(
       showMenu.map((item) => {
+        if (item.amount === 1) {
+          return item;
+        }
         return item.id === id
           ? { ...item, amount: parseFloat(item.amount - 1) }
           : item;
@@ -62,7 +62,10 @@ export default function Menu(props) {
               Ingredients: {item.ingredients.join(", ")}
             </p>
             {item.quantity && (
-              <button onClick={() => decreaseQuantity(item.id)}>
+              <button
+                className={item.amount ? "" : "visually-hidden"}
+                onClick={() => decreaseQuantity(item.id)}
+              >
                 <i className="bi bi-dash-lg"></i>
               </button>
             )}
@@ -76,7 +79,10 @@ export default function Menu(props) {
               {(item.price * item.amount).toFixed(2)}
             </button>
             {item.quantity && (
-              <button onClick={() => increaseQuantity(item.id)}>
+              <button
+                className={item.amount ? "" : "visually-hidden"}
+                onClick={() => increaseQuantity(item.id)}
+              >
                 <i className="bi bi-plus-lg"></i>
               </button>
             )}

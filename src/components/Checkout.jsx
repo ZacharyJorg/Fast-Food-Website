@@ -1,6 +1,8 @@
 export default function Checkout(props) {
   const taxTotal = props.total * 0.08;
   const finalTotal = props.total + taxTotal;
+
+  // add a breakdown of the items you got and the amount of them
   return (
     <div>
       <h1>CHECKOUT:</h1>
