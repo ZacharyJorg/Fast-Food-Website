@@ -6,6 +6,7 @@ export const menuItems = [
       "https://136667925.cdn6.editmysite.com/uploads/1/3/6/6/136667925/s962146695723897819_p235_i4_w1004.jpeg",
     ingredients: ["Carne Asada", "French Fries", "Guacamole", "Sour Cream"],
     price: 12.99,
+    quantity: false,
   },
 
   {
@@ -15,6 +16,7 @@ export const menuItems = [
       "https://www.isabeleats.com/wp-content/uploads/2020/12/bean-cheese-burritos-small-13.jpg",
     ingredients: ["Refried Beans", "Melted Cheese"],
     price: 7.99,
+    quantity: false,
   },
 
   {
@@ -29,6 +31,7 @@ export const menuItems = [
       "Pico De Gallo",
     ],
     price: 11.99,
+    quantity: false,
   },
   {
     id: 4,
@@ -37,6 +40,7 @@ export const menuItems = [
       "https://kristineskitchenblog.com/wp-content/uploads/2023/05/fish-tacos-recipe-747-500x375.jpg",
     ingredients: ["Talapia", "Fresh Cabbage", "Mango Habenaro Salsa"],
     price: 10.99,
+    quantity: false,
   },
   {
     id: 5,
@@ -45,6 +49,7 @@ export const menuItems = [
       "https://lifeatthetable.com/wp-content/uploads/2023/06/Life-At-The-Table-Ceviche.jpeg",
     ingredients: ["Shrimp", "Pico De Gallo", "Lime", "Avocado", "Jalepeno"],
     price: 13.99,
+    quantity: false,
   },
   {
     id: 6,
@@ -53,5 +58,6 @@ export const menuItems = [
       "https://www.browneyedbaker.com/wp-content/uploads/2020/04/tres-leches-cake-11-square.jpg",
     ingredients: ["Milk", "Cream", "Strawberries"],
     price: 10.99,
+    quantity: false,
   },
 ];

@@ -1,8 +1,31 @@
+import { useState } from "react";
 import { menuItems } from "../MenuItems";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
+// you can map over state
+// set state to the menuItems array and create the elements from the state
+//set a conditional to render the buttons based off the quanittity property from the state
+
 export default function Menu(props) {
-  const menuItemElements = menuItems.map((item) => {
+  const [quantity, setQuantity] = useState(0);
+  const [showMenu, setShowMenu] = useState(menuItems);
+
+  function increaseQuantity() {
+    setQuantity(quantity + 1);
+  }
+  function decreaseQuantity() {
+    setQuantity(quantity - 1);
+  }
+
+  function showQuantityButton(id) {
+    setShowMenu(
+      showMenu.map((item) => {
+        return item.id === id ? { ...item, quantity: !item.quantity } : item;
+      })
+    );
+  }
+
+  const menuItemElements = showMenu.map((item) => {
     return (
       <div className="col-md-12 mb-3" key={item.id}>
         <div className="card">
@@ -19,15 +42,32 @@ export default function Menu(props) {
             </p>
             <button
               className="btn btn-primary"
-              onClick={() => props.addTotal(item.id)}
+              onClick={() => {
+                props.addTotal(item.id);
+                showQuantityButton(item.id);
+                console.log(item.quantity);
+              }}
             >
               {item.price}
+            </button>
+            <button
+              style={
+                item.quantity
+                  ? { backgroundColor: "Blue" }
+                  : { backgroundColor: "Green" }
+              }
+            >
+              Hello
             </button>
           </div>
         </div>
       </div>
     );
   });
+
+  const styles = {
+    backgroundColor: showMenu.quantity ? "#59E391" : "white",
+  };
 
   return (
     <div>
