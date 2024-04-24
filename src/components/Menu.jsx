@@ -5,22 +5,37 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 // you can map over state
 // set state to the menuItems array and create the elements from the state
 //set a conditional to render the buttons based off the quanittity property from the state
+//change menuItems.quantity to .quantityButtons for better readabillity
 
 export default function Menu(props) {
   const [quantity, setQuantity] = useState(1);
   const [showMenu, setShowMenu] = useState(menuItems);
 
-  function increaseQuantity() {
+  function increaseQuantity(id) {
     if (quantity === 99) {
       return;
     }
     setQuantity(quantity + 1);
+    setShowMenu(
+      showMenu.map((item) => {
+        return item.id === id
+          ? { ...item, amount: parseFloat(item.amount + 1) }
+          : item;
+      })
+    );
   }
-  function decreaseQuantity() {
+  function decreaseQuantity(id) {
     if (quantity === 1) {
       return;
     }
     setQuantity(quantity - 1);
+    setShowMenu(
+      showMenu.map((item) => {
+        return item.id === id
+          ? { ...item, amount: parseFloat(item.amount - 1) }
+          : item;
+      })
+    );
   }
 
   function showQuantityButton(id) {
@@ -46,7 +61,11 @@ export default function Menu(props) {
             <p className="card-text">
               Ingredients: {item.ingredients.join(", ")}
             </p>
-            {item.quantity && <button onClick={decreaseQuantity}>Minus</button>}
+            {item.quantity && (
+              <button onClick={() => decreaseQuantity(item.id)}>
+                <i className="bi bi-dash-lg"></i>
+              </button>
+            )}
             <button
               className="btn btn-primary"
               onClick={() => {
@@ -54,9 +73,13 @@ export default function Menu(props) {
                 showQuantityButton(item.id);
               }}
             >
-              {(item.price * quantity).toFixed(2)}
+              {(item.price * item.amount).toFixed(2)}
             </button>
-            {item.quantity && <button onClick={increaseQuantity}>Plus</button>}
+            {item.quantity && (
+              <button onClick={() => increaseQuantity(item.id)}>
+                <i className="bi bi-plus-lg"></i>
+              </button>
+            )}
           </div>
         </div>
       </div>

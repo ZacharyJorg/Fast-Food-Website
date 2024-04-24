@@ -7,6 +7,7 @@ export const menuItems = [
     ingredients: ["Carne Asada", "French Fries", "Guacamole", "Sour Cream"],
     price: 12.99,
     quantity: false,
+    amount: 1,
   },
 
   {
@@ -17,6 +18,7 @@ export const menuItems = [
     ingredients: ["Refried Beans", "Melted Cheese"],
     price: 7.99,
     quantity: false,
+    amount: 1,
   },
 
   {
@@ -32,6 +34,7 @@ export const menuItems = [
     ],
     price: 11.99,
     quantity: false,
+    amount: 1,
   },
   {
     id: 4,
@@ -41,6 +44,7 @@ export const menuItems = [
     ingredients: ["Talapia", "Fresh Cabbage", "Mango Habenaro Salsa"],
     price: 10.99,
     quantity: false,
+    amount: 1,
   },
   {
     id: 5,
@@ -50,6 +54,7 @@ export const menuItems = [
     ingredients: ["Shrimp", "Pico De Gallo", "Lime", "Avocado", "Jalepeno"],
     price: 13.99,
     quantity: false,
+    amount: 1,
   },
   {
     id: 6,
@@ -59,5 +64,6 @@ export const menuItems = [
     ingredients: ["Milk", "Cream", "Strawberries"],
     price: 10.99,
     quantity: false,
+    amount: 1,
   },
 ];
