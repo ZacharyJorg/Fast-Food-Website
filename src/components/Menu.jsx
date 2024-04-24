@@ -109,11 +109,6 @@ export default function Menu(props) {
               Add
             </button>
           )}
-          {reset && (
-            <div className="alert alert-primary" role="alert">
-              Added!
-            </div>
-          )}
         </div>
       </div>
     );
