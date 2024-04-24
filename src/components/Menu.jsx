@@ -9,8 +9,11 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 // cahnge the condition on which the quantity buttons render so they leave when amount == 1
 // increasing the quantity cannot be stopped by the qunatity state, it breaks things
 
+//create a popup that confirms you added an item to your cart for easier readability
+
 export default function Menu(props) {
   const [showMenu, setShowMenu] = useState(menuItems);
+  const [reset, setReset] = useState(false);
 
   function increaseQuantity(id) {
     setShowMenu(
@@ -43,6 +46,14 @@ export default function Menu(props) {
         return item.id === id ? { ...item, quantity: !item.quantity } : item;
       })
     );
+  }
+
+  function resetMenu() {
+    setShowMenu(menuItems);
+    setReset(true);
+    setTimeout(() => {
+      setReset(false);
+    }, 2000);
   }
 
   const menuItemElements = showMenu.map((item) => {
@@ -88,11 +99,20 @@ export default function Menu(props) {
           {item.quantity && (
             <button
               className="btn btn-primary"
+              id="liveAlertBtn"
               style={{ width: "100px", alignSelf: "center" }}
-              onClick={() => props.addTotal(item.id)}
+              onClick={() => {
+                props.addTotal(item.id);
+                resetMenu();
+              }}
             >
               Add
             </button>
+          )}
+          {reset && (
+            <div className="alert alert-primary" role="alert">
+              Added!
+            </div>
           )}
         </div>
       </div>
