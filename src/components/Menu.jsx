@@ -10,7 +10,6 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 // increasing the quantity cannot be stopped by the qunatity state, it breaks things
 
 export default function Menu(props) {
-  const [quantity, setQuantity] = useState(1);
   const [showMenu, setShowMenu] = useState(menuItems);
 
   function increaseQuantity(id) {
@@ -72,7 +71,6 @@ export default function Menu(props) {
             <button
               className="btn btn-primary"
               onClick={() => {
-                props.addTotal(item.id);
                 showQuantityButton(item.id);
               }}
             >
@@ -87,6 +85,15 @@ export default function Menu(props) {
               </button>
             )}
           </div>
+          {item.quantity && (
+            <button
+              className="btn btn-primary"
+              style={{ width: "100px", alignSelf: "center" }}
+              onClick={() => props.addTotal(item.id)}
+            >
+              Add
+            </button>
+          )}
         </div>
       </div>
     );
