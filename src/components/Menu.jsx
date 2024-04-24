@@ -7,13 +7,19 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 //set a conditional to render the buttons based off the quanittity property from the state
 
 export default function Menu(props) {
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   const [showMenu, setShowMenu] = useState(menuItems);
 
   function increaseQuantity() {
+    if (quantity === 99) {
+      return;
+    }
     setQuantity(quantity + 1);
   }
   function decreaseQuantity() {
+    if (quantity === 1) {
+      return;
+    }
     setQuantity(quantity - 1);
   }
 
@@ -40,18 +46,17 @@ export default function Menu(props) {
             <p className="card-text">
               Ingredients: {item.ingredients.join(", ")}
             </p>
-            {item.quantity && <button>Minus</button>}
+            {item.quantity && <button onClick={decreaseQuantity}>Minus</button>}
             <button
               className="btn btn-primary"
               onClick={() => {
                 props.addTotal(item.id);
                 showQuantityButton(item.id);
-                console.log(item.quantity);
               }}
             >
-              {item.price}
+              {item.price * quantity}
             </button>
-            {item.quantity && <button>Plus</button>}
+            {item.quantity && <button onClick={increaseQuantity}>Plus</button>}
           </div>
         </div>
       </div>
