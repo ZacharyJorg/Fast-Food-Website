@@ -40,6 +40,7 @@ export default function Menu(props) {
             <p className="card-text">
               Ingredients: {item.ingredients.join(", ")}
             </p>
+            {item.quantity && <button>Minus</button>}
             <button
               className="btn btn-primary"
               onClick={() => {
@@ -50,24 +51,12 @@ export default function Menu(props) {
             >
               {item.price}
             </button>
-            <button
-              style={
-                item.quantity
-                  ? { backgroundColor: "Blue" }
-                  : { backgroundColor: "Green" }
-              }
-            >
-              Hello
-            </button>
+            {item.quantity && <button>Plus</button>}
           </div>
         </div>
       </div>
     );
   });
-
-  const styles = {
-    backgroundColor: showMenu.quantity ? "#59E391" : "white",
-  };
 
   return (
     <div>
