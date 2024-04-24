@@ -137,6 +137,11 @@ export default function Menu(props) {
                 aria-label="Close"
               ></button>
             </div>
+            {reset && (
+              <div className="alert alert-primary" role="alert">
+                Added!
+              </div>
+            )}
             <div className="modal-body container">{menuItemElements}</div>
             <div className="modal-footer">
               <button
