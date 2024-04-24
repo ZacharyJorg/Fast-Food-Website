@@ -53,7 +53,7 @@ export default function Menu(props) {
     setReset(true);
     setTimeout(() => {
       setReset(false);
-    }, 4000);
+    }, 2800);
   }
 
   const menuItemElements = showMenu.map((item) => {
