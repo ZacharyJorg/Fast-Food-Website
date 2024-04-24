@@ -54,7 +54,7 @@ export default function Menu(props) {
                 showQuantityButton(item.id);
               }}
             >
-              {item.price * quantity}
+              {(item.price * quantity).toFixed(2)}
             </button>
             {item.quantity && <button onClick={increaseQuantity}>Plus</button>}
           </div>
