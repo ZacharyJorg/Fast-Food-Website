@@ -104,7 +104,7 @@ export default function Menu(props) {
               id="liveAlertBtn"
               style={{ width: "100px", alignSelf: "center" }}
               onClick={() => {
-                props.addTotal(item.id);
+                props.addTotal(item.id, item.amount);
                 resetMenu();
               }}
             >

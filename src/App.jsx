@@ -14,10 +14,10 @@ function App() {
   const [cart, setCart] = useState(0);
   const [total, setTotal] = useState(0);
 
-  function addTotal(id) {
+  function addTotal(id, amount) {
     const selectedItem = menuItems.find((item) => item.id === id);
     setTotal((prevTotal) => prevTotal + selectedItem.price);
-    setCart(cart + 1);
+    setCart(cart + amount);
   }
 
   function placeOrder() {
