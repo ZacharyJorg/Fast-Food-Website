@@ -80,14 +80,14 @@ export default function Body() {
         </p>
         <div className="container locations-container">
           <ul className="locations-list">
-            <li>Seattle, WA</li>
-            <li>San Diego, CA</li>
-            <li>Los Angeles, CA</li>
-            <li>New York City, NY</li>
-            <li>Dallas, TX</li>
-            <li>Austin, TX</li>
-            <li>Portland, OR</li>
-            <li>Denver, CO</li>
+            <li className="location">Seattle, WA</li>
+            <li className="location">San Diego, CA</li>
+            <li className="location">Los Angeles, CA</li>
+            <li className="location">New York City, NY</li>
+            <li className="location">Dallas, TX</li>
+            <li className="location">Austin, TX</li>
+            <li className="location">Portland, OR</li>
+            <li className="location">Denver, CO</li>
           </ul>
         </div>
       </div>
