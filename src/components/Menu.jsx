@@ -75,7 +75,7 @@ export default function Menu(props) {
             </p>
             {item.quantity && (
               <button
-                className={item.amount ? "" : "visually-hidden"}
+                className={item.amount ? "btn quantityBtn" : "visually-hidden"}
                 onClick={() => decreaseQuantity(item.id)}
               >
                 <i className="bi bi-dash-lg"></i>
@@ -83,6 +83,7 @@ export default function Menu(props) {
             )}
             <button
               className="btn btn-primary"
+              style={{ marginLeft: "5px", marginRight: "5px" }}
               onClick={() => {
                 showQuantityButton(item.id);
               }}
@@ -91,7 +92,7 @@ export default function Menu(props) {
             </button>
             {item.quantity && (
               <button
-                className={item.amount ? "" : "visually-hidden"}
+                className={item.amount ? "btn quantityBtn" : "visually-hidden"}
                 onClick={() => increaseQuantity(item.id)}
               >
                 <i className="bi bi-plus-lg"></i>
@@ -102,7 +103,11 @@ export default function Menu(props) {
             <button
               className="btn btn-primary"
               id="liveAlertBtn"
-              style={{ width: "100px", alignSelf: "center" }}
+              style={{
+                width: "100px",
+                alignSelf: "center",
+                marginBottom: "10px",
+              }}
               onClick={() => {
                 props.addTotal(item.id, item.amount);
                 resetMenu();
