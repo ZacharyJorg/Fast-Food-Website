@@ -16,7 +16,7 @@ function App() {
 
   function addTotal(id, amount) {
     const selectedItem = menuItems.find((item) => item.id === id);
-    setTotal((prevTotal) => prevTotal + selectedItem.price);
+    setTotal((prevTotal) => prevTotal + selectedItem.price * amount);
     setCart(cart + amount);
   }
 
