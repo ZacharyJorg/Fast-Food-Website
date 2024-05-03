@@ -3,6 +3,8 @@ export default function Checkout(props) {
   const finalTotal = props.total + taxTotal;
 
   // add a breakdown of the items you got and the amount of them
+
+  // split the page in two, one side with what i have righjt now and the other side with a breakdown of the reciept (use google font VT323)
   return (
     <div>
       <h1>CHECKOUT:</h1>
