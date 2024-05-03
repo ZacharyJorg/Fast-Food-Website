@@ -25,6 +25,7 @@
 
 .bodyText {
   padding: 25px;
+  line-height: 2.5;
 }
 .card {
   min-width: 3rem;
@@ -63,9 +64,10 @@ img {
 
 .locations-container {
   border: 1px solid black;
+  border-radius: 15px;
   justify-items: center;
   padding: 25px;
-  padding-right: 35px;
+  padding-right: 25px;
   display: inline-block;
 }
 
@@ -74,8 +76,23 @@ img {
 }
 
 .locations-list {
+  display: flex;
+  list-style-type: none;
   list-style-position: inside;
-  padding-left: 0;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+li {
+  flex: 1;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 3px;
+  text-align: center;
+  border: solid black 1px;
+  border-radius: 25%;
 }
 
 .alert {

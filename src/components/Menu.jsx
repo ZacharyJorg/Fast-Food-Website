@@ -11,6 +11,8 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 
 //create a popup that confirms you added an item to your cart for easier readability
 
+// try and make the basket icon at the bottom display the number dynamically with the items amounts
+
 export default function Menu(props) {
   const [showMenu, setShowMenu] = useState(menuItems);
   const [reset, setReset] = useState(false);
