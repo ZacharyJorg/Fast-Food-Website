@@ -13,27 +13,38 @@ function App() {
   const [checkOut, setCheckOut] = useState(false);
   const [cart, setCart] = useState(0);
   const [total, setTotal] = useState(0);
+  const [order, setOrder] = useState([]);
 
   function addTotal(id, amount) {
     const selectedItem = menuItems.find((item) => item.id === id);
     setTotal((prevTotal) => prevTotal + selectedItem.price * amount);
     setCart(cart + amount);
+    setOrder((prevOrder) => [
+      ...prevOrder,
+      {
+        id: selectedItem.id,
+        name: selectedItem.name,
+        amount: amount,
+      },
+    ]);
   }
 
   function placeOrder() {
     setCheckOut(true);
   }
 
-  function checkedOut() {
+  function checkedOut(e) {
+    e.preventDefault();
     setCheckOut(false);
     setCart(0);
     setTotal(0);
+    setOrder([]);
   }
 
   return (
     <div>
       {checkOut ? (
-        <Checkout checkedOut={checkedOut} total={total} />
+        <Checkout checkedOut={checkedOut} total={total} order={order} />
       ) : (
         <div>
           <Nav />
